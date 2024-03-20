@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="actionBarSize">56dp</dimen>
+
+    <!--activity spacing start-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">200dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="viewpager_margin_overlap">-60dp</dimen>
+    <dimen name="viewpager_margin_overlap_payment">-30dp</dimen>
+    <!--activity spacing end-->
+
+    <!--general spacing start-->
+    <dimen name="spacing_xsmall">2dp</dimen>
+    <dimen name="spacing_small">3dp</dimen>
+    <dimen name="spacing_medium">5dp</dimen>
+    <dimen name="spacing_xmedium">7dp</dimen>
+    <dimen name="spacing_middle">10dp</dimen>
+    <dimen name="spacing_large">15dp</dimen>
+    <dimen name="spacing_smlarge">18dp</dimen>
+    <dimen name="spacing_mlarge">20dp</dimen>
+    <dimen name="spacing_mxlarge">25dp</dimen>
+    <dimen name="spacing_xlarge">35dp</dimen>
+    <dimen name="spacing_xmlarge">40dp</dimen>
+    <dimen name="spacing_xxlarge">50dp</dimen>
+    <dimen name="spacing_xxxlarge">55dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <!--general spacing end-->
+
+    <!--Home Screen Widget Start-->
+    <dimen name="widget_background_corner_radius">10dp</dimen>
+    <dimen name="widget_button_background_corner_radius">36dp</dimen>
+    <dimen name="beverage_button_height">74dp</dimen>
+    <dimen name="widget_button_image_size">24dp</dimen>
+    <dimen name="widget_text_size_big">28sp</dimen>
+    <dimen name="widget_button_text_size">12sp</dimen>
+    <dimen name="widget_quote_margin_bottom">4dp</dimen>
+    <dimen name="widget_margin">8dp</dimen> <!--Refer to App Widget Documentation for margin information http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout -->
+    <!--Home Screen Widget End-->
+
+</resources>
+
+

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application
+        android:name=".utils.AppConstants"
+        android:allowBackup="true"
+        android:icon="@drawable/logo_no_name"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_with_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".RegisterLogin.RecoverAccountActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".RegisterLogin.VerifiedActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".RegisterLogin.StepperWizardActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".RegisterLogin.ResetPasswordActivity"
+            android:theme="@style/NoActionBar" />
+        <activity android:name=".common.BookingDetailsActivity" />
+        <activity android:name=".ui.profile.UpiDetailsActivity" />
+        <activity android:name=".ui.profile.AboutMeActivity" />
+        <activity android:name=".ui.profile.ChangePasswordActivity" />
+        <activity android:name=".ui.profile.PersonalDetailsActivity" />
+        <activity android:name=".NormalUser.NearByAreaActivity" />
+        <activity android:name=".OwnerUser.AreaHistoryActivity" />
+        <activity android:name=".NormalUser.UserHistoryActivity" />
+        <activity
+            android:name=".RegisterLogin.SplashScreen"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "https://dms24081999.loca.lt/api/users/reset-password/” -->
+                <data
+                    android:host="@string/firebase_page_url"
+                    android:pathPrefix="@string/firebase_page_path"
+                    android:scheme="@string/firebase_page_protocol" />
+                <!-- note that the leading "/" is required for pathPrefix -->
+            </intent-filter>
+            <intent-filter android:label="one-Q-shop">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "one_q_shop://reset_password” -->
+                <data
+                    android:host="reset_password"
+                    android:scheme="one_q_shop" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OwnerUser.MainOwnerActivity" />
+        <activity
+            android:name=".NormalUser.MainNormalActivity"
+            android:launchMode="singleTop" /> <!-- for no stacking due to notification -->
+        <activity android:name=".NormalUser.BookParkingAreaActivity" />
+        <activity android:name=".OwnerUser.AddPositionActivity" />
+        <activity android:name=".NormalUser.GPSMapActivity" />
+        <activity
+            android:name=".RegisterLogin.ForgotPasswordActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".RegisterLogin.RegisterActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".RegisterLogin.LoginActivity"
+            android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key" /> <!-- Google Maps API key -->
+        <receiver
+            android:name=".utils.notifications.NotificationReceiver"
+            android:enabled="true"
+            android:exported="false" />
+        <receiver android:name=".utils.notifications.NotificationActionReceiver" /> <!-- Notification receiver -->
+        <!-- Home Screen Widget Start -->
+        <receiver
+            android:name=".utils.widgets.ParkingOwnerUserWidget"
+            android:label="Smart Parking (Owner User)">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/parking_owner_user_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".utils.widgets.ParkingNormalUserWidget"
+            android:label="Smart Parking (Normal User)">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/parking_normal_user_widget_info" />
+        </receiver> <!-- Home Screen Widget End -->
+        <!-- Background service Start -->
+        <service
+            android:name=".utils.services.MyParkingService"
+            android:foregroundServiceType="dataSync" />
+    </application>
+</manifest>
